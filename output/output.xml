@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.0 on win32)" generated="20220717 22:25:50.903" rpa="false" schemaversion="3">
+<suite id="s1" name="Open Application" source="C:\Users\RESHMA SUDHAKARAN\PycharmProjects\YoutubeLaunch\tests\Open_Application.robot">
+<test id="s1-t1" name="App_launch _time" line="10">
+<kw name="Launch_Youtube" library="CommonFunctionality">
+<msg timestamp="20220717 22:26:27.555" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=5203acd0feaa7321</arg>
+<arg>appPackage=com.google.android.youtube</arg>
+<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220717 22:26:27.555" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='5203acd0feaa7321' | appPackage='com.google.android.youtube' | appActivity='com.google.android.youtube.HomeActivity' ]</msg>
+<msg timestamp="20220717 22:26:29.583" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "5203acd0feaa7321", "appium:appPackage": "com.google.android.youtube", "appium:appActivity": "com.google.android.youtube.HomeActivity"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "5203acd0feaa7321", "appPackage": "com.google.android.youtube", "appActivity": "com.google.android.youtube.HomeActivity"}}</msg>
+<msg timestamp="20220717 22:26:29.585" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220717 22:26:41.615" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 883</msg>
+<msg timestamp="20220717 22:26:41.615" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:41.615" level="DEBUG">Opened application with session id cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1</msg>
+<msg timestamp="20220717 22:26:41.615" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20220717 22:26:27.555" endtime="20220717 22:26:41.615"/>
+</kw>
+<msg timestamp="20220717 22:26:41.615" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:27.555" endtime="20220717 22:26:41.615"/>
+</kw>
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<arg>20s</arg>
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<msg timestamp="20220717 22:26:41.615" level="TRACE">Arguments: [ '20s' ]</msg>
+<msg timestamp="20220717 22:26:41.615" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen {"options": {"timeLimit": 20.0}}</msg>
+<msg timestamp="20220717 22:26:42.693" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:26:42.693" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:42.693" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:41.615" endtime="20220717 22:26:42.693"/>
+</kw>
+<kw name="Verify_Page" library="Applaunch">
+<msg timestamp="20220717 22:26:42.693" level="TRACE">Arguments: [  ]</msg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${success}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${display_locator}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<msg timestamp="20220717 22:26:42.693" level="TRACE">Arguments: [ 'Page Should Contain Element' | '${display_locator}' ]</msg>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>${display_locator}</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20220717 22:26:42.693" level="TRACE">Arguments: [ 'com.google.android.youtube:id/youtube_logo' ]</msg>
+<msg timestamp="20220717 22:26:42.693" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "id", "value": "com.google.android.youtube:id/youtube_logo"}</msg>
+<msg timestamp="20220717 22:26:44.877" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:26:44.877" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:44.877" level="INFO">Current page contains element 'com.google.android.youtube:id/youtube_logo'.</msg>
+<msg timestamp="20220717 22:26:44.877" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:42.693" endtime="20220717 22:26:44.877"/>
+</kw>
+<msg timestamp="20220717 22:26:44.893" level="TRACE">Return: True</msg>
+<msg timestamp="20220717 22:26:44.893" level="INFO">${success} = True</msg>
+<status status="PASS" starttime="20220717 22:26:42.693" endtime="20220717 22:26:44.893"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${success}" == "True"</arg>
+<arg>Success</arg>
+<arg>ELSE</arg>
+<arg>Unsuccess</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Arguments: [ '"True" == "True"' | 'Success' | 'ELSE' | 'Unsuccess' ]</msg>
+<kw name="Success" library="Applaunch">
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Launch Successful</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Arguments: [ 'Launch Successful' ]</msg>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:44.894" endtime="20220717 22:26:44.894"/>
+</kw>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:44.894" endtime="20220717 22:26:44.894"/>
+</kw>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:44.893" endtime="20220717 22:26:44.894"/>
+</kw>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:42.693" endtime="20220717 22:26:44.894"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<msg timestamp="20220717 22:26:44.894" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:26:44.894" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen {"options": {}}</msg>
+<msg timestamp="20220717 22:26:45.929" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen HTTP/1.1" 200 1088552</msg>
+<msg timestamp="20220717 22:26:45.929" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:45.945" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-1.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-1.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220717 22:26:45.945" level="TRACE">Return: 'C:\\Users\\RESHMA SUDHAKARAN\\PycharmProjects\\YoutubeLaunch\\output\\appium-screenrecord-1.mp4'</msg>
+<status status="PASS" starttime="20220717 22:26:44.894" endtime="20220717 22:26:45.945"/>
+</kw>
+<kw name="Video To Frame Convert" library="Launch_Time">
+<var>${applaunchtime}</var>
+<msg timestamp="20220717 22:26:45.945" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:26:53.003" level="INFO">FPS is 12
+Start comparing reference frame with ecah frame.
+Reference image not matching with this frame. Check for next frame 0
+Reference image not matching with this frame. Check for next frame 1
+Reference image not matching with this frame. Check for next frame 2
+Reference image not matching with this frame. Check for next frame 3
+Reference image not matching with this frame. Check for next frame 4
+Reference image not matching with this frame. Check for next frame 5
+Reference image not matching with this frame. Check for next frame 6
+Reference image not matching with this frame. Check for next frame 7
+Reference image not matching with this frame. Check for next frame 8
+Reference image not matching with this frame. Check for next frame 9
+Reference image not matching with this frame. Check for next frame 10
+Reference image not matching with this frame. Check for next frame 11
+Reference image not matching with this frame. Check for next frame 12
+Reference image not matching with this frame. Check for next frame 13
+Reference image not matching with this frame. Check for next frame 14
+Reference image not matching with this frame. Check for next frame 15
+Reference image not matching with this frame. Check for next frame 16
+Reference image not matching with this frame. Check for next frame 17
+Reference image not matching with this frame. Check for next frame 18
+Reference image not matching with this frame. Check for next frame 19
+Reference image not matching with this frame. Check for next frame 20
+Reference image not matching with this frame. Check for next frame 21
+Reference image not matching with this frame. Check for next frame 22
+Reference image not matching with this frame. Check for next frame 23
+Reference image not matching with this frame. Check for next frame 24
+Reference image not matching with this frame. Check for next frame 25
+Reference image not matching with this frame. Check for next frame 26
+Reference image not matching with this frame. Check for next frame 27
+Reference image not matching with this frame. Check for next frame 28
+Reference image not matching with this frame. Check for next frame 29
+Reference image not matching with this frame. Check for next frame 30
+Reference image not matching with this frame. Check for next frame 31
+Reference image not matching with this frame. Check for next frame 32
+Reference image not matching with this frame. Check for next frame 33
+Reference image not matching with this frame. Check for next frame 34
+Reference image not matching with this frame. Check for next frame 35
+Reference image not matching with this frame. Check for next frame 36
+Reference image not matching with this frame. Check for next frame 37
+Reference image not matching with this frame. Check for next frame 38
+Reference image not matching with this frame. Check for next frame 39
+Reference image not matching with this frame. Check for next frame 40
+Reference image not matching with this frame. Check for next frame 41
+Reference image not matching with this frame. Check for next frame 42
+Reference image not matching with this frame. Check for next frame 43
+Reference image not matching with this frame. Check for next frame 44
+Reference image not matching with this frame. Check for next frame 45
+Reference image not matching with this frame. Check for next frame 46
+Reference image not matching with this frame. Check for next frame 47
+Reference image not matching with this frame. Check for next frame 48
+Reference image not matching with this frame. Check for next frame 49
+Reference image not matching with this frame. Check for next frame 50
+Reference image not matching with this frame. Check for next frame 51
+Reference image not matching with this frame. Check for next frame 52
+Reference image not matching with this frame. Check for next frame 53
+Reference image not matching with this frame. Check for next frame 54
+Reference image not matching with this frame. Check for next frame 55
+Reference image not matching with this frame. Check for next frame 56
+Reference image not matching with this frame. Check for next frame 57
+Reference image not matching with this frame. Check for next frame 58
+Reference image not matching with this frame. Check for next frame 59
+Reference image not matching with this frame. Check for next frame 60
+Reference image not matching with this frame. Check for next frame 61
+Reference image not matching with this frame. Check for next frame 62
+Reference image not matching with this frame. Check for next frame 63
+Reference image not matching with this frame. Check for next frame 64
+Reference image not matching with this frame. Check for next frame 65
+Reference image not matching with this frame. Check for next frame 66
+Reference image not matching with this frame. Check for next frame 67
+Reference image not matching with this frame. Check for next frame 68
+Reference image not matching with this frame. Check for next frame 69
+Reference image not matching with this frame. Check for next frame 70
+Reference image not matching with this frame. Check for next frame 71
+Reference image not matching with this frame. Check for next frame 72
+Reference image not matching with this frame. Check for next frame 73
+Reference image not matching with this frame. Check for next frame 74
+Reference image not matching with this frame. Check for next frame 75
+Reference image not matching with this frame. Check for next frame 76
+Reference image not matching with this frame. Check for next frame 77
+Reference image not matching with this frame. Check for next frame 78
+Reference image not matching with this frame. Check for next frame 79
+Reference image not matching with this frame. Check for next frame 80
+Reference image not matching with this frame. Check for next frame 81
+Reference image not matching with this frame. Check for next frame 82
+Reference image not matching with this frame. Check for next frame 83
+Reference image not matching with this frame. Check for next frame 84
+Reference image not matching with this frame. Check for next frame 85
+Reference image not matching with this frame. Check for next frame 86
+Reference image not matching with this frame. Check for next frame 87
+Reference image not matching with this frame. Check for next frame 88
+Reference image not matching with this frame. Check for next frame 89
+Reference image not matching with this frame. Check for next frame 90
+Reference image not matching with this frame. Check for next frame 91
+Reference image not matching with this frame. Check for next frame 92
+Reference image not matching with this frame. Check for next frame 93
+Reference image not matching with this frame. Check for next frame 94
+Frame Number 95 is same
+App launch time is 7.500000 sec</msg>
+<msg timestamp="20220717 22:26:53.003" level="TRACE">Return: 7.5</msg>
+<msg timestamp="20220717 22:26:53.003" level="INFO">${applaunchtime} = 7.5</msg>
+<status status="PASS" starttime="20220717 22:26:45.945" endtime="20220717 22:26:53.003"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>App Launch time : ${applaunchtime} sec</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20220717 22:26:53.003" level="TRACE">Arguments: [ 'App Launch time : 7.5 sec' ]</msg>
+<msg timestamp="20220717 22:26:53.003" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:53.003" endtime="20220717 22:26:53.003"/>
+</kw>
+<status status="PASS" starttime="20220717 22:26:27.555" endtime="20220717 22:26:53.003"/>
+</test>
+<test id="s1-t2" name="Navigation_time" line="18">
+<kw name="Operate_Options" library="Applaunch">
+<msg timestamp="20220717 22:26:53.003" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${display_locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:26:53.003" level="TRACE">Arguments: [ 'com.google.android.youtube:id/youtube_logo' ]</msg>
+<msg timestamp="20220717 22:26:53.013" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "id", "value": "com.google.android.youtube:id/youtube_logo"}</msg>
+<msg timestamp="20220717 22:26:53.293" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:26:53.293" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:53.298" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:53.003" endtime="20220717 22:26:53.298"/>
+</kw>
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<msg timestamp="20220717 22:26:53.298" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:26:53.298" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen {"options": {"timeLimit": 180.0}}</msg>
+<msg timestamp="20220717 22:26:53.887" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:26:53.887" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:26:53.887" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:53.298" endtime="20220717 22:26:53.887"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220717 22:26:53.887" level="TRACE">Arguments: [ '5' ]</msg>
+<msg timestamp="20220717 22:26:58.904" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20220717 22:26:58.904" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:53.887" endtime="20220717 22:26:58.904"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Shorts_Launch_Button1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:26:58.904" level="TRACE">Arguments: [ '//android.widget.Button[@index=1]' ]</msg>
+<msg timestamp="20220717 22:26:58.904" level="INFO">Clicking element '//android.widget.Button[@index=1]'.</msg>
+<msg timestamp="20220717 22:26:58.904" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.Button[@index=1]"}</msg>
+<msg timestamp="20220717 22:27:00.885" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:00.885" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:00.885" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000016/click {"id": "00000000-0000-00ba-ffff-ffff00000016"}</msg>
+<msg timestamp="20220717 22:27:01.031" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000016/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:01.031" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:01.031" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:58.904" endtime="20220717 22:27:01.031"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<arg>filename= home_to_shorts</arg>
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<msg timestamp="20220717 22:27:01.031" level="TRACE">Arguments: [ filename=' home_to_shorts' ]</msg>
+<msg timestamp="20220717 22:27:01.031" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen {"options": {}}</msg>
+<msg timestamp="20220717 22:27:02.083" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen HTTP/1.1" 200 671452</msg>
+<msg timestamp="20220717 22:27:02.095" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:02.095" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%20home_to_shorts.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="%20home_to_shorts.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220717 22:27:02.095" level="TRACE">Return: 'C:\\Users\\RESHMA SUDHAKARAN\\PycharmProjects\\YoutubeLaunch\\output\\ home_to_shorts.mp4'</msg>
+<status status="PASS" starttime="20220717 22:27:01.031" endtime="20220717 22:27:02.095"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${display_locator}</arg>
+<arg>3s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:02.095" level="TRACE">Arguments: [ 'com.google.android.youtube:id/youtube_logo' | '3s' ]</msg>
+<msg timestamp="20220717 22:27:02.095" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "id", "value": "com.google.android.youtube:id/youtube_logo"}</msg>
+<msg timestamp="20220717 22:27:02.703" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:02.703" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:02.703" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:02.095" endtime="20220717 22:27:02.703"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Plus_Launch_Button1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:02.703" level="TRACE">Arguments: [ '//android.widget.Button[@index=2]' ]</msg>
+<msg timestamp="20220717 22:27:02.703" level="INFO">Clicking element '//android.widget.Button[@index=2]'.</msg>
+<msg timestamp="20220717 22:27:02.703" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.Button[@index=2]"}</msg>
+<msg timestamp="20220717 22:27:03.416" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:03.432" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:03.432" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000017/click {"id": "00000000-0000-00ba-ffff-ffff00000017"}</msg>
+<msg timestamp="20220717 22:27:03.511" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000017/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:03.511" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:03.511" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:02.703" endtime="20220717 22:27:03.511"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<msg timestamp="20220717 22:27:03.511" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:03.511" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back {}</msg>
+<msg timestamp="20220717 22:27:04.919" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back HTTP/1.1" 200 65</msg>
+<msg timestamp="20220717 22:27:04.919" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:04.919" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:03.511" endtime="20220717 22:27:04.919"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Subscription_Launch_Button1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:04.919" level="TRACE">Arguments: [ '//android.widget.Button[@index=3]' ]</msg>
+<msg timestamp="20220717 22:27:04.919" level="INFO">Clicking element '//android.widget.Button[@index=3]'.</msg>
+<msg timestamp="20220717 22:27:04.919" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.Button[@index=3]"}</msg>
+<msg timestamp="20220717 22:27:06.673" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:06.673" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:06.673" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000018/click {"id": "00000000-0000-00ba-ffff-ffff00000018"}</msg>
+<msg timestamp="20220717 22:27:06.782" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000018/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:06.782" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:06.782" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:04.919" endtime="20220717 22:27:06.782"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<msg timestamp="20220717 22:27:06.782" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:06.782" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back {}</msg>
+<msg timestamp="20220717 22:27:07.811" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back HTTP/1.1" 200 65</msg>
+<msg timestamp="20220717 22:27:07.811" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:07.811" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:06.782" endtime="20220717 22:27:07.811"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Library_Launch_Button1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:07.811" level="TRACE">Arguments: [ '//android.widget.Button[@index=4]' ]</msg>
+<msg timestamp="20220717 22:27:07.811" level="INFO">Clicking element '//android.widget.Button[@index=4]'.</msg>
+<msg timestamp="20220717 22:27:07.811" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.Button[@index=4]"}</msg>
+<msg timestamp="20220717 22:27:09.375" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:09.375" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:09.375" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000019/click {"id": "00000000-0000-00ba-ffff-ffff00000019"}</msg>
+<msg timestamp="20220717 22:27:09.556" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000019/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:09.556" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:09.556" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:07.811" endtime="20220717 22:27:09.556"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<msg timestamp="20220717 22:27:09.556" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:09.556" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back {}</msg>
+<msg timestamp="20220717 22:27:11.261" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/back HTTP/1.1" 200 65</msg>
+<msg timestamp="20220717 22:27:11.261" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:11.261" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:09.556" endtime="20220717 22:27:11.261"/>
+</kw>
+<msg timestamp="20220717 22:27:11.261" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:26:53.003" endtime="20220717 22:27:11.261"/>
+</kw>
+<kw name="Navigation Time" library="Navigation_Time">
+<var>${navigation_time}</var>
+<msg timestamp="20220717 22:27:11.261" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:11.960" level="INFO">FPS is 2
+Start comparing reference frame with each frame.
+Reference image not matching with this frame. Check for next frame 0
+Reference image not matching with this frame. Check for next frame 1
+Reference image not matching with this frame. Check for next frame 2
+Reference image not matching with this frame. Check for next frame 3
+Reference image not matching with this frame. Check for next frame 4
+Frame Number 5 is same
+Navigation  time is 2.625000 sec</msg>
+<msg timestamp="20220717 22:27:11.960" level="TRACE">Return: 2.625</msg>
+<msg timestamp="20220717 22:27:11.960" level="INFO">${navigation_time} = 2.625</msg>
+<status status="PASS" starttime="20220717 22:27:11.261" endtime="20220717 22:27:11.960"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Navigation time : ${navigation_time} sec</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20220717 22:27:11.960" level="TRACE">Arguments: [ 'Navigation time : 2.625 sec' ]</msg>
+<msg timestamp="20220717 22:27:11.960" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:11.960" endtime="20220717 22:27:11.960"/>
+</kw>
+<kw name="Search_Element" library="Applaunch">
+<arg>java telusko</arg>
+<msg timestamp="20220717 22:27:11.960" level="TRACE">Arguments: [ ${text_search}='java telusko' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${display_locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:11.960" level="TRACE">Arguments: [ 'com.google.android.youtube:id/youtube_logo' ]</msg>
+<msg timestamp="20220717 22:27:11.960" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "id", "value": "com.google.android.youtube:id/youtube_logo"}</msg>
+<msg timestamp="20220717 22:27:12.491" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:12.491" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:12.491" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:11.960" endtime="20220717 22:27:12.491"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Search_Button1}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:12.491" level="TRACE">Arguments: [ '//android.widget.ImageView[@content-desc="Search"]' ]</msg>
+<msg timestamp="20220717 22:27:12.491" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.ImageView[@content-desc=\"Search\"]"}</msg>
+<msg timestamp="20220717 22:27:12.851" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:12.851" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:12.851" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:12.491" endtime="20220717 22:27:12.851"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Search_Button1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:12.866" level="TRACE">Arguments: [ '//android.widget.ImageView[@content-desc="Search"]' ]</msg>
+<msg timestamp="20220717 22:27:12.866" level="INFO">Clicking element '//android.widget.ImageView[@content-desc="Search"]'.</msg>
+<msg timestamp="20220717 22:27:12.866" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.ImageView[@content-desc=\"Search\"]"}</msg>
+<msg timestamp="20220717 22:27:13.187" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:13.187" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:13.187" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000000b8/click {"id": "00000000-0000-00ba-ffff-ffff000000b8"}</msg>
+<msg timestamp="20220717 22:27:13.234" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000000b8/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:13.234" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:13.234" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:12.851" endtime="20220717 22:27:13.234"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Search_Launch_Button1}</arg>
+<arg>3s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:13.234" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Search YouTube"]' | '3s' ]</msg>
+<msg timestamp="20220717 22:27:13.234" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Search YouTube\"]"}</msg>
+<msg timestamp="20220717 22:27:13.510" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:13.510" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:13.510" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:13.234" endtime="20220717 22:27:13.510"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Search_Launch_Button1}</arg>
+<arg>${text_search}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:13.510" level="TRACE">Arguments: [ '//android.widget.EditText[@text="Search YouTube"]' | 'java telusko' ]</msg>
+<msg timestamp="20220717 22:27:13.510" level="INFO">Typing text 'java telusko' into text field '//android.widget.EditText[@text="Search YouTube"]'</msg>
+<msg timestamp="20220717 22:27:13.510" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.EditText[@text=\"Search YouTube\"]"}</msg>
+<msg timestamp="20220717 22:27:15.174" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:15.174" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:15.174" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000002df/value {"text": "java telusko", "value": ["j", "a", "v", "a", " ", "t", "e", "l", "u", "s", "k", "o"], "id": "00000000-0000-00ba-ffff-ffff000002df"}</msg>
+<msg timestamp="20220717 22:27:15.253" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000002df/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:15.253" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:15.253" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:13.510" endtime="20220717 22:27:15.253"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>//android.widget.TextView[@text="${text_search}"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:15.253" level="TRACE">Arguments: [ '//android.widget.TextView[@text="java telusko"]' ]</msg>
+<msg timestamp="20220717 22:27:15.253" level="INFO">Clicking element '//android.widget.TextView[@text="java telusko"]'.</msg>
+<msg timestamp="20220717 22:27:15.253" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.TextView[@text=\"java telusko\"]"}</msg>
+<msg timestamp="20220717 22:27:16.335" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220717 22:27:16.335" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:16.335" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000002f8/click {"id": "00000000-0000-00ba-ffff-ffff000002f8"}</msg>
+<msg timestamp="20220717 22:27:17.234" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff000002f8/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:17.234" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:17.234" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:15.253" endtime="20220717 22:27:17.234"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Search_Result_Locator}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:17.234" level="TRACE">Arguments: [ '//android.widget.TextView[@index=1]' ]</msg>
+<msg timestamp="20220717 22:27:17.234" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.TextView[@index=1]"}</msg>
+<msg timestamp="20220717 22:27:18.003" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 651</msg>
+<msg timestamp="20220717 22:27:18.003" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:18.003" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:17.234" endtime="20220717 22:27:18.003"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Video_Number_Locator}</arg>
+<arg>20s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:18.003" level="TRACE">Arguments: [ "//android.view.ViewGroup[contains(@content-desc,'Beginners')]" | '20s' ]</msg>
+<msg timestamp="20220717 22:27:18.003" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.view.ViewGroup[contains(@content-desc,'Beginners')]"}</msg>
+<msg timestamp="20220717 22:27:18.554" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220717 22:27:18.554" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:18.554" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:18.003" endtime="20220717 22:27:18.554"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Video_Number_Locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220717 22:27:18.554" level="TRACE">Arguments: [ "//android.view.ViewGroup[contains(@content-desc,'Beginners')]" ]</msg>
+<msg timestamp="20220717 22:27:18.554" level="INFO">Clicking element '//android.view.ViewGroup[contains(@content-desc,'Beginners')]'.</msg>
+<msg timestamp="20220717 22:27:18.554" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.view.ViewGroup[contains(@content-desc,'Beginners')]"}</msg>
+<msg timestamp="20220717 22:27:18.805" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220717 22:27:18.805" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:18.805" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000133/click {"id": "00000000-0000-00ba-ffff-ffff00000133"}</msg>
+<msg timestamp="20220717 22:27:18.852" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/element/00000000-0000-00ba-ffff-ffff00000133/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220717 22:27:18.852" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:18.852" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:18.554" endtime="20220717 22:27:18.852"/>
+</kw>
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<msg timestamp="20220717 22:27:18.852" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:18.852" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen {"options": {"timeLimit": 180.0}}</msg>
+<msg timestamp="20220717 22:27:19.485" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/start_recording_screen HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:19.485" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:19.485" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:18.852" endtime="20220717 22:27:19.485"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220717 22:27:19.485" level="TRACE">Arguments: [ '10' ]</msg>
+<msg timestamp="20220717 22:27:29.494" level="INFO">Slept 10 seconds</msg>
+<msg timestamp="20220717 22:27:29.494" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:19.485" endtime="20220717 22:27:29.494"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${skip_status}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${Skip_Button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<msg timestamp="20220717 22:27:29.494" level="TRACE">Arguments: [ 'Wait Until Page Contains Element' | '${Skip_Button}' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Skip_Button}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220717 22:27:29.494" level="TRACE">Arguments: [ '//android.widget.LinearLayout[@content-desc="Skip ad"]' ]</msg>
+<msg timestamp="20220717 22:27:29.494" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:30.044" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:30.044" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:30.245" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:31.060" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:31.060" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:31.266" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:32.011" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:32.011" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:32.213" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:32.982" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:32.982" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:33.194" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:33.992" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:33.992" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:34.193" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements {"using": "xpath", "value": "//android.widget.LinearLayout[@content-desc=\"Skip ad\"]"}</msg>
+<msg timestamp="20220717 22:27:35.013" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220717 22:27:35.013" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220717 22:27:35.096" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:27:35.096" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/screenshot {}</msg>
+<msg timestamp="20220717 22:27:37.726" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/screenshot HTTP/1.1" 200 1582156</msg>
+<msg timestamp="20220717 22:27:37.726" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:37.726" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220717 22:27:37.726" level="TRACE">Return: 'C:\\Users\\RESHMA SUDHAKARAN\\PycharmProjects\\YoutubeLaunch\\output\\appium-screenshot-1.png'</msg>
+<status status="PASS" starttime="20220717 22:27:35.096" endtime="20220717 22:27:37.726"/>
+</kw>
+<msg timestamp="20220717 22:27:37.726" level="FAIL">Element '//android.widget.LinearLayout[@content-desc="Skip ad"]' did not appear in 5 seconds</msg>
+<msg timestamp="20220717 22:27:37.726" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 88, in wait_until_page_contains_element
+    self._wait_until(timeout, error, self._is_element_present, locator)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 122, in _wait_until
+    self._wait_until_no_error(timeout, wait_func)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 133, in _wait_until_no_error
+    raise AssertionError(timeout_error)
+AssertionError: Element '//android.widget.LinearLayout[@content-desc="Skip ad"]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20220717 22:27:29.494" endtime="20220717 22:27:37.726"/>
+</kw>
+<msg timestamp="20220717 22:27:37.726" level="TRACE">Return: False</msg>
+<msg timestamp="20220717 22:27:37.726" level="INFO">${skip_status} = False</msg>
+<status status="PASS" starttime="20220717 22:27:29.494" endtime="20220717 22:27:37.726"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${skip_status}" == 'True'</arg>
+<arg>Skip_And_Play</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<msg timestamp="20220717 22:27:37.726" level="TRACE">Arguments: [ '"False" == \'True\'' | 'Skip_And_Play' ]</msg>
+<msg timestamp="20220717 22:27:37.726" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:37.726" endtime="20220717 22:27:37.726"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<arg>filename= Start_Or_Stop</arg>
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<msg timestamp="20220717 22:27:37.726" level="TRACE">Arguments: [ filename=' Start_Or_Stop' ]</msg>
+<msg timestamp="20220717 22:27:37.726" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen {"options": {}}</msg>
+<msg timestamp="20220717 22:27:38.691" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/cef13ba6-4250-4c01-9ed3-7dbe9a4d68a1/appium/stop_recording_screen HTTP/1.1" 200 9577448</msg>
+<msg timestamp="20220717 22:27:38.726" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220717 22:27:38.739" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="%20Start_Or_Stop.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="%20Start_Or_Stop.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220717 22:27:38.739" level="TRACE">Return: 'C:\\Users\\RESHMA SUDHAKARAN\\PycharmProjects\\YoutubeLaunch\\output\\ Start_Or_Stop.mp4'</msg>
+<status status="PASS" starttime="20220717 22:27:37.726" endtime="20220717 22:27:38.739"/>
+</kw>
+<msg timestamp="20220717 22:27:38.739" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:27:11.960" endtime="20220717 22:27:38.739"/>
+</kw>
+<status status="PASS" starttime="20220717 22:26:53.003" endtime="20220717 22:27:38.739"/>
+</test>
+<test id="s1-t3" name="Playback_verification" line="23">
+<kw name="Video Play Back" library="Play_Back">
+<var>${playback_time}</var>
+<msg timestamp="20220717 22:27:38.754" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220717 22:28:06.826" level="INFO">FPS is 37
+Start comparing reference frame with each frame.
+Reference image not matching with this frame. Check for next frame 0
+Reference image not matching with this frame. Check for next frame 1
+Reference image not matching with this frame. Check for next frame 2
+Reference image not matching with this frame. Check for next frame 3
+Reference image not matching with this frame. Check for next frame 4
+Reference image not matching with this frame. Check for next frame 5
+Reference image not matching with this frame. Check for next frame 6
+Reference image not matching with this frame. Check for next frame 7
+Reference image not matching with this frame. Check for next frame 8
+Reference image not matching with this frame. Check for next frame 9
+Reference image not matching with this frame. Check for next frame 10
+Reference image not matching with this frame. Check for next frame 11
+Reference image not matching with this frame. Check for next frame 12
+Reference image not matching with this frame. Check for next frame 13
+Reference image not matching with this frame. Check for next frame 14
+Reference image not matching with this frame. Check for next frame 15
+Reference image not matching with this frame. Check for next frame 16
+Reference image not matching with this frame. Check for next frame 17
+Reference image not matching with this frame. Check for next frame 18
+Reference image not matching with this frame. Check for next frame 19
+Reference image not matching with this frame. Check for next frame 20
+Reference image not matching with this frame. Check for next frame 21
+Reference image not matching with this frame. Check for next frame 22
+Reference image not matching with this frame. Check for next frame 23
+Reference image not matching with this frame. Check for next frame 24
+Reference image not matching with this frame. Check for next frame 25
+Reference image not matching with this frame. Check for next frame 26
+Reference image not matching with this frame. Check for next frame 27
+Reference image not matching with this frame. Check for next frame 28
+Reference image not matching with this frame. Check for next frame 29
+Reference image not matching with this frame. Check for next frame 30
+Reference image not matching with this frame. Check for next frame 31
+Reference image not matching with this frame. Check for next frame 32
+Reference image not matching with this frame. Check for next frame 33
+Reference image not matching with this frame. Check for next frame 34
+Reference image not matching with this frame. Check for next frame 35
+Reference image not matching with this frame. Check for next frame 36
+Reference image not matching with this frame. Check for next frame 37
+Reference image not matching with this frame. Check for next frame 38
+Reference image not matching with this frame. Check for next frame 39
+Reference image not matching with this frame. Check for next frame 40
+Reference image not matching with this frame. Check for next frame 41
+Reference image not matching with this frame. Check for next frame 42
+Reference image not matching with this frame. Check for next frame 43
+Reference image not matching with this frame. Check for next frame 44
+Reference image not matching with this frame. Check for next frame 45
+Reference image not matching with this frame. Check for next frame 46
+Reference image not matching with this frame. Check for next frame 47
+Reference image not matching with this frame. Check for next frame 48
+Reference image not matching with this frame. Check for next frame 49
+Reference image not matching with this frame. Check for next frame 50
+Reference image not matching with this frame. Check for next frame 51
+Reference image not matching with this frame. Check for next frame 52
+Reference image not matching with this frame. Check for next frame 53
+Reference image not matching with this frame. Check for next frame 54
+Reference image not matching with this frame. Check for next frame 55
+Reference image not matching with this frame. Check for next frame 56
+Reference image not matching with this frame. Check for next frame 57
+Reference image not matching with this frame. Check for next frame 58
+Reference image not matching with this frame. Check for next frame 59
+Reference image not matching with this frame. Check for next frame 60
+Reference image not matching with this frame. Check for next frame 61
+Reference image not matching with this frame. Check for next frame 62
+Reference image not matching with this frame. Check for next frame 63
+Reference image not matching with this frame. Check for next frame 64
+Reference image not matching with this frame. Check for next frame 65
+Reference image not matching with this frame. Check for next frame 66
+Reference image not matching with this frame. Check for next frame 67
+Reference image not matching with this frame. Check for next frame 68
+Reference image not matching with this frame. Check for next frame 69
+Reference image not matching with this frame. Check for next frame 70
+Reference image not matching with this frame. Check for next frame 71
+Reference image not matching with this frame. Check for next frame 72
+Reference image not matching with this frame. Check for next frame 73
+Reference image not matching with this frame. Check for next frame 74
+Reference image not matching with this frame. Check for next frame 75
+Reference image not matching with this frame. Check for next frame 76
+Reference image not matching with this frame. Check for next frame 77
+Reference image not matching with this frame. Check for next frame 78
+Reference image not matching with this frame. Check for next frame 79
+Reference image not matching with this frame. Check for next frame 80
+Reference image not matching with this frame. Check for next frame 81
+Reference image not matching with this frame. Check for next frame 82
+Reference image not matching with this frame. Check for next frame 83
+Reference image not matching with this frame. Check for next frame 84
+Reference image not matching with this frame. Check for next frame 85
+Reference image not matching with this frame. Check for next frame 86
+Reference image not matching with this frame. Check for next frame 87
+Reference image not matching with this frame. Check for next frame 88
+Reference image not matching with this frame. Check for next frame 89
+Reference image not matching with this frame. Check for next frame 90
+Reference image not matching with this frame. Check for next frame 91
+Reference image not matching with this frame. Check for next frame 92
+Reference image not matching with this frame. Check for next frame 93
+Reference image not matching with this frame. Check for next frame 94
+Reference image not matching with this frame. Check for next frame 95
+Reference image not matching with this frame. Check for next frame 96
+Reference image not matching with this frame. Check for next frame 97
+Reference image not matching with this frame. Check for next frame 98
+Reference image not matching with this frame. Check for next frame 99
+Reference image not matching with this frame. Check for next frame 100
+Reference image not matching with this frame. Check for next frame 101
+Reference image not matching with this frame. Check for next frame 102
+Reference image not matching with this frame. Check for next frame 103
+Reference image not matching with this frame. Check for next frame 104
+Reference image not matching with this frame. Check for next frame 105
+Reference image not matching with this frame. Check for next frame 106
+Reference image not matching with this frame. Check for next frame 107
+Reference image not matching with this frame. Check for next frame 108
+Reference image not matching with this frame. Check for next frame 109
+Reference image not matching with this frame. Check for next frame 110
+Reference image not matching with this frame. Check for next frame 111
+Reference image not matching with this frame. Check for next frame 112
+Reference image not matching with this frame. Check for next frame 113
+Reference image not matching with this frame. Check for next frame 114
+Reference image not matching with this frame. Check for next frame 115
+Reference image not matching with this frame. Check for next frame 116
+Reference image not matching with this frame. Check for next frame 117
+Reference image not matching with this frame. Check for next frame 118
+Reference image not matching with this frame. Check for next frame 119
+Reference image not matching with this frame. Check for next frame 120
+Reference image not matching with this frame. Check for next frame 121
+Reference image not matching with this frame. Check for next frame 122
+Reference image not matching with this frame. Check for next frame 123
+Reference image not matching with this frame. Check for next frame 124
+Reference image not matching with this frame. Check for next frame 125
+Reference image not matching with this frame. Check for next frame 126
+Reference image not matching with this frame. Check for next frame 127
+Reference image not matching with this frame. Check for next frame 128
+Reference image not matching with this frame. Check for next frame 129
+Reference image not matching with this frame. Check for next frame 130
+Reference image not matching with this frame. Check for next frame 131
+Reference image not matching with this frame. Check for next frame 132
+Reference image not matching with this frame. Check for next frame 133
+Reference image not matching with this frame. Check for next frame 134
+Reference image not matching with this frame. Check for next frame 135
+Reference image not matching with this frame. Check for next frame 136
+Reference image not matching with this frame. Check for next frame 137
+Reference image not matching with this frame. Check for next frame 138
+Reference image not matching with this frame. Check for next frame 139
+Reference image not matching with this frame. Check for next frame 140
+Reference image not matching with this frame. Check for next frame 141
+Reference image not matching with this frame. Check for next frame 142
+Reference image not matching with this frame. Check for next frame 143
+Reference image not matching with this frame. Check for next frame 144
+Reference image not matching with this frame. Check for next frame 145
+Reference image not matching with this frame. Check for next frame 146
+Reference image not matching with this frame. Check for next frame 147
+Reference image not matching with this frame. Check for next frame 148
+Reference image not matching with this frame. Check for next frame 149
+Reference image not matching with this frame. Check for next frame 150
+Reference image not matching with this frame. Check for next frame 151
+Reference image not matching with this frame. Check for next frame 152
+Reference image not matching with this frame. Check for next frame 153
+Reference image not matching with this frame. Check for next frame 154
+Reference image not matching with this frame. Check for next frame 155
+Reference image not matching with this frame. Check for next frame 156
+Reference image not matching with this frame. Check for next frame 157
+Reference image not matching with this frame. Check for next frame 158
+Reference image not matching with this frame. Check for next frame 159
+Reference image not matching with this frame. Check for next frame 160
+Reference image not matching with this frame. Check for next frame 161
+Reference image not matching with this frame. Check for next frame 162
+Reference image not matching with this frame. Check for next frame 163
+Reference image not matching with this frame. Check for next frame 164
+Reference image not matching with this frame. Check for next frame 165
+Reference image not matching with this frame. Check for next frame 166
+Reference image not matching with this frame. Check for next frame 167
+Reference image not matching with this frame. Check for next frame 168
+Reference image not matching with this frame. Check for next frame 169
+Reference image not matching with this frame. Check for next frame 170
+Reference image not matching with this frame. Check for next frame 171
+Reference image not matching with this frame. Check for next frame 172
+Reference image not matching with this frame. Check for next frame 173
+Reference image not matching with this frame. Check for next frame 174
+Reference image not matching with this frame. Check for next frame 175
+Reference image not matching with this frame. Check for next frame 176
+Reference image not matching with this frame. Check for next frame 177
+Reference image not matching with this frame. Check for next frame 178
+Reference image not matching with this frame. Check for next frame 179
+Reference image not matching with this frame. Check for next frame 180
+Reference image not matching with this frame. Check for next frame 181
+Reference image not matching with this frame. Check for next frame 182
+Reference image not matching with this frame. Check for next frame 183
+Reference image not matching with this frame. Check for next frame 184
+Reference image not matching with this frame. Check for next frame 185
+Reference image not matching with this frame. Check for next frame 186
+Reference image not matching with this frame. Check for next frame 187
+Reference image not matching with this frame. Check for next frame 188
+Reference image not matching with this frame. Check for next frame 189
+Reference image not matching with this frame. Check for next frame 190
+Reference image not matching with this frame. Check for next frame 191
+Reference image not matching with this frame. Check for next frame 192
+Reference image not matching with this frame. Check for next frame 193
+Reference image not matching with this frame. Check for next frame 194
+Reference image not matching with this frame. Check for next frame 195
+Reference image not matching with this frame. Check for next frame 196
+Reference image not matching with this frame. Check for next frame 197
+Reference image not matching with this frame. Check for next frame 198
+Reference image not matching with this frame. Check for next frame 199
+Reference image not matching with this frame. Check for next frame 200
+Reference image not matching with this frame. Check for next frame 201
+Reference image not matching with this frame. Check for next frame 202
+Reference image not matching with this frame. Check for next frame 203
+Reference image not matching with this frame. Check for next frame 204
+Reference image not matching with this frame. Check for next frame 205
+Reference image not matching with this frame. Check for next frame 206
+Reference image not matching with this frame. Check for next frame 207
+Reference image not matching with this frame. Check for next frame 208
+Reference image not matching with this frame. Check for next frame 209
+Reference image not matching with this frame. Check for next frame 210
+Reference image not matching with this frame. Check for next frame 211
+Reference image not matching with this frame. Check for next frame 212
+Reference image not matching with this frame. Check for next frame 213
+Reference image not matching with this frame. Check for next frame 214
+Reference image not matching with this frame. Check for next frame 215
+Reference image not matching with this frame. Check for next frame 216
+Reference image not matching with this frame. Check for next frame 217
+Reference image not matching with this frame. Check for next frame 218
+Reference image not matching with this frame. Check for next frame 219
+Reference image not matching with this frame. Check for next frame 220
+Reference image not matching with this frame. Check for next frame 221
+Reference image not matching with this frame. Check for next frame 222
+Reference image not matching with this frame. Check for next frame 223
+Reference image not matching with this frame. Check for next frame 224
+Reference image not matching with this frame. Check for next frame 225
+Reference image not matching with this frame. Check for next frame 226
+Reference image not matching with this frame. Check for next frame 227
+Reference image not matching with this frame. Check for next frame 228
+Reference image not matching with this frame. Check for next frame 229
+Reference image not matching with this frame. Check for next frame 230
+Reference image not matching with this frame. Check for next frame 231
+Reference image not matching with this frame. Check for next frame 232
+Reference image not matching with this frame. Check for next frame 233
+Reference image not matching with this frame. Check for next frame 234
+Reference image not matching with this frame. Check for next frame 235
+Reference image not matching with this frame. Check for next frame 236
+Reference image not matching with this frame. Check for next frame 237
+Reference image not matching with this frame. Check for next frame 238
+Reference image not matching with this frame. Check for next frame 239
+Reference image not matching with this frame. Check for next frame 240
+Reference image not matching with this frame. Check for next frame 241
+Reference image not matching with this frame. Check for next frame 242
+Reference image not matching with this frame. Check for next frame 243
+Reference image not matching with this frame. Check for next frame 244
+Reference image not matching with this frame. Check for next frame 245
+Reference image not matching with this frame. Check for next frame 246
+Reference image not matching with this frame. Check for next frame 247
+Reference image not matching with this frame. Check for next frame 248
+Reference image not matching with this frame. Check for next frame 249
+Reference image not matching with this frame. Check for next frame 250
+Reference image not matching with this frame. Check for next frame 251
+Reference image not matching with this frame. Check for next frame 252
+Reference image not matching with this frame. Check for next frame 253
+Reference image not matching with this frame. Check for next frame 254
+Reference image not matching with this frame. Check for next frame 255
+Reference image not matching with this frame. Check for next frame 256
+Reference image not matching with this frame. Check for next frame 257
+Reference image not matching with this frame. Check for next frame 258
+Reference image not matching with this frame. Check for next frame 259
+Reference image not matching with this frame. Check for next frame 260
+Reference image not matching with this frame. Check for next frame 261
+Reference image not matching with this frame. Check for next frame 262
+Reference image not matching with this frame. Check for next frame 263
+Reference image not matching with this frame. Check for next frame 264
+Reference image not matching with this frame. Check for next frame 265
+Reference image not matching with this frame. Check for next frame 266
+Reference image not matching with this frame. Check for next frame 267
+Reference image not matching with this frame. Check for next frame 268
+Reference image not matching with this frame. Check for next frame 269
+Reference image not matching with this frame. Check for next frame 270
+Reference image not matching with this frame. Check for next frame 271
+Frame Number 272 is same
+Navigation  time is 7.378378 sec</msg>
+<msg timestamp="20220717 22:28:06.826" level="TRACE">Return: 7.378378378378378</msg>
+<msg timestamp="20220717 22:28:06.826" level="INFO">${playback_time} = 7.378378378378378</msg>
+<status status="PASS" starttime="20220717 22:27:38.754" endtime="20220717 22:28:06.826"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Video PlayBack Time: ${playback_time} sec</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20220717 22:28:06.826" level="TRACE">Arguments: [ 'Video PlayBack Time: 7.378378378378378 sec' ]</msg>
+<msg timestamp="20220717 22:28:06.826" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220717 22:28:06.826" endtime="20220717 22:28:06.826"/>
+</kw>
+<status status="PASS" starttime="20220717 22:27:38.754" endtime="20220717 22:28:06.826"/>
+</test>
+<status status="PASS" starttime="20220717 22:25:50.903" endtime="20220717 22:28:06.826"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Open Application">Open Application</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

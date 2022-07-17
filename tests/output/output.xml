@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.0 on win32)" generated="20220508 22:51:09.789" rpa="false" schemaversion="3">
+<suite id="s1" name="Applaunch" source="C:\Users\RESHMA SUDHAKARAN\PycharmProjects\YoutubeLaunch\tests\Applaunch.robot">
+<test id="s1-t1" name="Youtube_Operations" line="59">
+<kw name="Launch_Application">
+<msg timestamp="20220508 22:51:09.883" level="TRACE">Arguments: [  ]</msg>
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<msg timestamp="20220508 22:51:09.883" level="TRACE">Arguments: [  ]</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220508 22:51:09.883" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220508 22:51:09.883" level="FAIL">No application is open</msg>
+<msg timestamp="20220508 22:51:09.883" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenrecord.py", line 63, in start_screen_recording
+    self._output_format = self._set_output_format() \
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenrecord.py", line 119, in _set_output_format
+    return '.ffmpeg' if self._is_ios() else '.mp4'
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 382, in _is_ios
+    return self._is_platform('ios')
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 378, in _is_platform
+    platform_name = self._get_platform()
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 374, in _get_platform
+    raise e
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 372, in _get_platform
+    platform_name = self._current_application().desired_capabilities['platformName']
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 367, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenshot.py", line 31, in capture_page_screenshot
+    if hasattr(self._current_application(), 'get_screenshot_as_file'):
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 367, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20220508 22:51:09.883" endtime="20220508 22:51:09.883"/>
+</kw>
+<msg timestamp="20220508 22:51:09.883" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220508 22:51:09.898" level="FAIL">No application is open</msg>
+<msg timestamp="20220508 22:51:09.898" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenrecord.py", line 63, in start_screen_recording
+    self._output_format = self._set_output_format() \
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_screenrecord.py", line 119, in _set_output_format
+    return '.ffmpeg' if self._is_ios() else '.mp4'
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 382, in _is_ios
+    return self._is_platform('ios')
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 378, in _is_platform
+    platform_name = self._get_platform()
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 374, in _get_platform
+    raise e
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 372, in _get_platform
+    platform_name = self._current_application().desired_capabilities['platformName']
+  File "C:\Users\RESHMA SUDHAKARAN\AppData\Local\Programs\Python\Python310\lib\site-packages\AppiumLibrary\keywords\_applicationmanagement.py", line 367, in _current_application
+    raise RuntimeError('No application is open')
+RuntimeError: No application is open</msg>
+<status status="FAIL" starttime="20220508 22:51:09.883" endtime="20220508 22:51:09.898"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=TMF4C19920015255</arg>
+<arg>appPackage=com.google.android.youtube</arg>
+<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="NOT RUN" starttime="20220508 22:51:09.898" endtime="20220508 22:51:09.898"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220508 22:51:09.898" endtime="20220508 22:51:09.898"/>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<status status="NOT RUN" starttime="20220508 22:51:09.898" endtime="20220508 22:51:09.898"/>
+</kw>
+<status status="FAIL" starttime="20220508 22:51:09.883" endtime="20220508 22:51:09.898"/>
+</kw>
+<kw name="Operate_Options">
+<status status="NOT RUN" starttime="20220508 22:51:09.898" endtime="20220508 22:51:09.898"/>
+</kw>
+<kw name="Search_Element">
+<arg>java</arg>
+<status status="NOT RUN" starttime="20220508 22:51:09.898" endtime="20220508 22:51:09.898"/>
+</kw>
+<status status="FAIL" starttime="20220508 22:51:09.883" endtime="20220508 22:51:09.898">No application is open</status>
+</test>
+<status status="FAIL" starttime="20220508 22:51:09.789" endtime="20220508 22:51:09.898"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Applaunch">Applaunch</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220508 22:51:09.883" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

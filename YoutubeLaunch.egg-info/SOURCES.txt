@@ -1,0 +1,6 @@
+main.py
+setup.py
+YoutubeLaunch.egg-info/PKG-INFO
+YoutubeLaunch.egg-info/SOURCES.txt
+YoutubeLaunch.egg-info/dependency_links.txt
+YoutubeLaunch.egg-info/top_level.txt
